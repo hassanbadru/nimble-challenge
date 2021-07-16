@@ -12,6 +12,18 @@ const CandidateProvider = props => {
         updateCandidates((all_candidates && all_candidates.results) ? all_candidates.results : [])
     }
 
+    const searchCandidate = search_term => {
+        let searched_candidates = []
+        loadData()
+        if (candidates && search_term){
+            searched_candidates = candidates.filter(c => c.name.toLowerCase().includes(search_term.toLowerCase()))
+            updateCandidates(searched_candidates)
+        } else {
+            updateCandidates(candidates)
+        }
+
+    }
+
     const addToOpenList = candidate => {
         let new_open_candidates = (open_candidates) ? open_candidates : []
         if (!new_open_candidates.includes(candidate.id)){
@@ -37,7 +49,8 @@ const CandidateProvider = props => {
                 loadData,
                 updateCandidates,
                 addToOpenList,
-                removeFromList
+                removeFromList,
+                searchCandidate
             }
 
 
