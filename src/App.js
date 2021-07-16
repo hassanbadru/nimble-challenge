@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import CandidatesPage from "./pages/candidatesPage"
+import { useCandidate } from './contexts/candidatecontext'
 
-function App() {
-  return (
-    <header>
-      <p>
-        Edit <code>App.js</code> and save to reload
-      </p>
-    </header>
-  );
+
+const App = props => {
+
+ let { loadData } = useCandidate()
+
+ useEffect(()=> {
+     loadData()
+  }, [])
+
+  return <CandidatesPage />
 }
 
 export default App;
