@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles, Grid, Dialog, List } from '@material-ui/core'
+import React from "react";
+import { Grid, Dialog } from '@material-ui/core'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 import {colorMapping} from '../utils/enums'

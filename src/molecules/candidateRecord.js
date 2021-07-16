@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import moment from 'moment'
-import { makeStyles, Grid, ListItem } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search';
+import { makeStyles, Grid, ListItem } from '@material-ui/core';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
-// import LabelIcon from '@material-ui/icons/Label';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 import CandidateApps from './candidateApps'

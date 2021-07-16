@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { makeStyles, Grid, Card, Input, TextField, IconButton } from '@material-ui/core'
+import { makeStyles, Grid, TextField, IconButton } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 
 import { useCandidate } from '../contexts/candidatecontext'

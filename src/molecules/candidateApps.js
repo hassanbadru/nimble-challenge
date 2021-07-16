@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { makeStyles, Grid, List, ListItem, Badge } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search';
-import LabelIcon from '@material-ui/icons/Label';
+import { makeStyles, Grid, List, ListItem } from '@material-ui/core'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 import {colorMapping} from '../utils/enums'

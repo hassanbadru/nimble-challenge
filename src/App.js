@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-  Link,
-  withRouter,
-  useLocation
+  withRouter
 } from "react-router-dom";
 
 import CandidatesPage from "./pages/candidatesPage"
@@ -17,9 +15,7 @@ const AppView = props => {
 
  let { loadData } = useCandidate()
 
- useEffect(()=> {
-     loadData()
-  }, [])
+ useEffect(() => loadData(), [])
 
   return (
       <>

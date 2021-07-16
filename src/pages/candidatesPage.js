@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles, Grid, Dialog, List } from '@material-ui/core'
+import { makeStyles, Grid } from '@material-ui/core'
 
 import { useCandidate } from '../contexts/candidatecontext'
 import SearchBox from '../components/searchbox'
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 const CandidatesPage = props => {
   const classes = useStyles()
   const [view_application, toggleApplication] = useState(false)
-  let { candidates, loadData, updateCandidates } = useCandidate()
+  let { candidates } = useCandidate()
 
   const openAppModal = application => {
       toggleApplication(application)

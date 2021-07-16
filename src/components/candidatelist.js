@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { makeStyles, Grid, List, ListItem, Typography } from '@material-ui/core'
+import React, { useState } from "react";
+import { makeStyles, Grid, List, ListItem } from '@material-ui/core'
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
@@ -20,10 +20,9 @@ const useStyles = makeStyles({
 
 
 const CandidateList = (props) => {
-    let el = null
     const classes = useStyles()
     const [allselected, updateAllSelected] = useState(false)
-    let { candidates, loadData, updateCandidates } = useCandidate()
+    let { candidates } = useCandidate()
     let {openAppModal} = props
 
     return (
