@@ -5,11 +5,11 @@ const CandidateContext = createContext();
 
 
 const CandidateProvider = props => {
-    const [candidates, updateCandidates] = useState({})
+    const [candidates, updateCandidates] = useState([])
     const [open_candidates, updateOpenList] = useState([])
 
     const loadData = async () => {
-        updateCandidates(all_candidates)
+        updateCandidates((all_candidates && all_candidates.results) ? all_candidates.results : [])
     }
 
     let data = {

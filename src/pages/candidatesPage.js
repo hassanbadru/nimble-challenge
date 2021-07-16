@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles, Grid, Dialog } from '@material-ui/core'
+import { makeStyles, Grid, Dialog, List } from '@material-ui/core'
 
 import { useCandidate } from '../contexts/candidatecontext'
+import SearchBox from '../components/searchbox'
+import CandidateList from '../components/candidatelist'
 
 const useStyles = makeStyles(theme => ({
         body: {
-            marginTop: '2%',
             padding: '4%',
         }
     })
@@ -21,13 +22,12 @@ const CandidatesPage = props => {
       document.title = 'Nimble | Candidates Page'
    }, [])
 
-   console.log("candidates", candidates.results)
-
-
   return (
       <>
         <Grid className={classes.body}>
-            {(candidates && candidates.results) ? (candidates.results.length) : "None"}
+            {(candidates && candidates.length) ? (candidates.length) : "0"} Candidates
+            <SearchBox/>
+            <CandidateList />
         </Grid>
 
         <ApplicationModal view_application={view_application} toggleApplication={toggleApplication} />
