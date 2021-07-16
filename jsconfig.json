@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "ui-kit/*": ["./src/ui-kit/*"],
+      "utils/*": ["./src/utils/*"],
+      "data/*": ["./src/data/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
