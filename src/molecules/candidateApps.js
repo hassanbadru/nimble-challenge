@@ -9,6 +9,9 @@ const useStyles = makeStyles({
     apps: {
         width: '100%',
         color: '#444'
+    },
+    appitem: {
+        width: '30%'
     }
 })
 
@@ -22,16 +25,24 @@ const CandidateApps = props => {
       <Grid className={classes.apps} >
         <List>
             <ListItem style={{fontWeight: "bold"}}>
-                  Role Title &nbsp; &nbsp;
-                  Status &nbsp; &nbsp;
+                <Grid className={classes.appitem}>
+                  Role Title
+                </Grid>
+                <Grid className={classes.appitem}>
+                  Status
+                </Grid>
              </ListItem>
             {
                 (applications) ? (
                     applications.map((application, i) => {
                         return (
                             <ListItem key={i} onClick={() => openAppModal(application)} style={{cursor: 'pointer'}}>
-                                &nbsp; &nbsp; {application.role.title} &nbsp; &nbsp;
-                                &nbsp; &nbsp; <LabelIcon style={{color: (application && application.role) ? colorMapping[application.role.active_status] : colorMapping["2"]}} /> &nbsp; {application.new_status.label}
+                                <Grid className={classes.appitem}>
+                                    {application.role.title}
+                                </Grid>
+                                <Grid className={classes.appitem}>
+                                    <LabelIcon style={{color: (application && application.role) ? colorMapping[application.role.active_status] : colorMapping["2"]}} /> &nbsp; {application.new_status.label}
+                                </Grid>
                             </ListItem>
                         )
                     })

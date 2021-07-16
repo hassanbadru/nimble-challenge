@@ -16,6 +16,9 @@ const useStyles = makeStyles({
         width: '100%',
         color: '#444',
         backgroundColor: "#eee"
+    },
+    item: {
+        width: '30%'
     }
 })
 
@@ -43,12 +46,23 @@ const CandidateRecord = props => {
           (candidate) ? (
           <>
               <ListItem className={classes.record} >
-                    <CheckBoxOutlineBlankIcon style={{cursor: 'pointer'}} /> &nbsp; &nbsp;
-                    {candidate.name} &nbsp; &nbsp;
-                    <LabelIcon style={{color: status_color}} /> &nbsp;
-                    {(candidate && candidate.applications) ? candidate.applications[0].new_status.label : "None"} &nbsp; &nbsp;
-                    {candidate.applications.length} &nbsp; &nbsp;
-                    {(candidate && candidate.applications) ? moment(candidate.applications[0].updated).fromNow() : null } &nbsp; &nbsp;
+                    <Grid className={classes.item}>
+                        <CheckBoxOutlineBlankIcon style={{cursor: 'pointer'}} />
+                    </Grid >
+                    <Grid className={classes.item}>
+                        {candidate.name}
+                    </Grid>
+                    <Grid className={classes.item}>
+                        <LabelIcon style={{color: status_color}} /> &nbsp;
+                        {(candidate && candidate.applications) ? candidate.applications[0].new_status.label : "None"}
+                    </Grid>
+                    <Grid className={classes.item}>
+                        {candidate.applications.length}
+                    </Grid>
+                    <Grid className={classes.item}>
+                        {(candidate && candidate.applications) ? moment(candidate.applications[0].updated).fromNow() : null }
+                    </Grid>
+
                     {(candidate && candidate.applications && is_open) ? <RemoveCircleIcon style={{cursor: 'pointer', color: "#ccc"}} onClick={() => updateCloseView(candidate)} /> : <AddCircleIcon style={{cursor: 'pointer', color: "#ccc"}} onClick={() => updateOpenView(candidate)} />}
                </ListItem>
 

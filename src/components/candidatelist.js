@@ -10,6 +10,9 @@ import { useCandidate } from '../contexts/candidatecontext'
 const useStyles = makeStyles({
     body: {
         margin: 0
+    },
+    item: {
+        width: '30%'
     }
 })
 
@@ -22,12 +25,22 @@ const CandidateList = (props) => {
 
     return (
         <List>
-            <ListItem style={{backgroundColor: '#eee', fontWeight: "bold"}}>
-                  <CheckBoxOutlineBlankIcon /> &nbsp; &nbsp;
-                  Candidate Name &nbsp; &nbsp;
-                  Status &nbsp; &nbsp;
-                  # Apps &nbsp; &nbsp;
-                  Last Action
+            <ListItem style={{backgroundColor: '#ccc', fontWeight: "bold"}}>
+                  <Grid className={classes.item}>
+                    <CheckBoxOutlineBlankIcon />
+                  </Grid>
+                  <Grid className={classes.item}>
+                    Candidate Name
+                  </Grid>
+                  <Grid className={classes.item}>
+                    Status
+                  </Grid>
+                  <Grid className={classes.item}>
+                    # Apps
+                  </Grid>
+                  <Grid className={classes.item}>
+                    Last Action
+                  </Grid>
              </ListItem>
             {(candidates) ? candidates.map((candidate, i) => <CandidateRecord key={i} candidate={candidate} openAppModal={openAppModal} />) : "None"}
         </List>

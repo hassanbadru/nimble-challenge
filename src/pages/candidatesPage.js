@@ -7,7 +7,7 @@ import CandidateList from '../components/candidatelist'
 
 const useStyles = makeStyles(theme => ({
         body: {
-            padding: '4%',
+            padding: '1%'
         }
     })
 )
@@ -32,10 +32,14 @@ const CandidatesPage = props => {
 
   return (
       <>
-        <Grid className={classes.body}>
-            {(candidates && candidates.length) ? (candidates.length) : "0"} Candidates
+        <Grid container direction="column" className={classes.body}>
+            <Grid item style={{color: '#888'}}>
+                {(candidates && candidates.length) ? (candidates.length) : "0"} Candidates
+            </Grid>
+            <Grid item>
             <SearchBox/>
             <CandidateList openAppModal={openAppModal} />
+            </Grid>
         </Grid>
 
         <ApplicationModal view_application={view_application} closeAppModal={closeAppModal} />

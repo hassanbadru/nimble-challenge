@@ -7,10 +7,10 @@ import { useCandidate } from '../contexts/candidatecontext'
 
 const useStyles = makeStyles({
     search: {
-        margin: '1%',
+        margin: '1%'
     },
     searchfield: {
-        width: '50%',
+        width: '60%'
     }
 })
 
@@ -22,11 +22,11 @@ const Search = props => {
         (e.target.value) ? searchCandidate(e.target.value) : loadData()
     }
 
-    let placeholder = 'Search'
+    let placeholder = 'Search Candidate'
 
     return (
-      <Grid item className={classes.search}>
-         <Input placeholder={placeholder} className={classes.searchfield} disableUnderline autoFocus onChange={handleSearch}  variant="outlined" />
+      <Grid className={classes.search}>
+         <TextField placeholder={placeholder} className={classes.searchfield} disableUnderline autoFocus onChange={handleSearch}  variant="filled" />
          <IconButton color="primary" style={{backgroundColor: 'green', color: "#eee", borderRadius: "10%"}}>
              <SearchIcon />
          </IconButton>
