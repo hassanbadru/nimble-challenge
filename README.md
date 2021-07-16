@@ -1,12 +1,16 @@
 # Nimble Technical Exercise (React)
 <p>
 
-<!-- GETTING STARTED -->
+### Technical Specs / Requirements Met
+- [x] When the user clicks a row in the list of candidates, it should expand a list of that candidate's applications.
+- [x] If the user clicks a row that is already expanded, it should close the list of that candidate's applications.
+- [x] When the user clicks an application line item, bring up a modal/overlay that shows the candidate information and information specific to that application/role
+- [x] Search for candidates by name
+- [x] Setup candidate page, route & components
+- [x] Web App is mobile-responsive
+  
 ## To Run
-
-To get a local copy up and running follow these steps.
-
-### Installation
+To install and run:
 
 1. Clone the repo
 ```sh
@@ -28,13 +32,6 @@ npm start
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-### Requirements Met
-[x] When the user clicks a row in the list of candidates, it should expand a list of that candidate's applications.
-[x] If the user clicks a row that is already expanded, it should close the list of that candidate's applications.
-[x] When the user clicks an application line item, bring up a modal/overlay that shows the candidate information and information specific to that application/role
-[x] Search for candidates by name
-[x] Setup candidate page, route & components
-[x] Web App is mobile-responsive
 
 ### Demo Screenshots
 
