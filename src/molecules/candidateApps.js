@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { makeStyles, Grid, List, ListItem, Badge } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 import LabelIcon from '@material-ui/icons/Label';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+
 import {colorMapping} from '../utils/enums'
 
 const useStyles = makeStyles({
@@ -41,7 +43,7 @@ const CandidateApps = props => {
                                     {application.role.title}
                                 </Grid>
                                 <Grid className={classes.appitem}>
-                                    <LabelIcon style={{color: (application && application.role) ? colorMapping[application.role.active_status] : colorMapping["2"]}} /> &nbsp; {application.new_status.label}
+                                    <FiberManualRecordIcon style={{color: (application && application.role) ? colorMapping[application.role.active_status] : colorMapping["2"], fontSize: 10}} /> &nbsp; {application.new_status.label}
                                 </Grid>
                             </ListItem>
                         )

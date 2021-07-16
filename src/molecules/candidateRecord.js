@@ -3,9 +3,11 @@ import moment from 'moment'
 import { makeStyles, Grid, ListItem } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
-import LabelIcon from '@material-ui/icons/Label';
+// import LabelIcon from '@material-ui/icons/Label';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 import CandidateApps from './candidateApps'
 import {colorMapping} from '../utils/enums'
@@ -26,8 +28,9 @@ const useStyles = makeStyles({
 const CandidateRecord = props => {
     const classes = useStyles()
     const [is_open, openCheck] = useState(false)
+    const [selected, updateSelect] = useState(false)
     let { open_candidates, addToOpenList, removeFromList } = useCandidate()
-    let { candidate, openAppModal } = props
+    let { candidate, openAppModal, allselected, updateAllSelected } = props
 
     const updateOpenView = (candidate) => {
         addToOpenList(candidate)
@@ -46,14 +49,22 @@ const CandidateRecord = props => {
           (candidate) ? (
           <>
               <ListItem className={classes.record} >
-                    <Grid className={classes.item}>
-                        <CheckBoxOutlineBlankIcon style={{cursor: 'pointer'}} />
+                    <Grid style={{width: '10%'}}>
+                        {
+                            (selected || allselected) ? (
+                                <CheckBoxIcon style={{cursor: 'pointer'}} onClick={()=> {
+                                updateSelect(false)
+                                updateAllSelected(false)}} />
+                            ) :  (
+                                <CheckBoxOutlineBlankIcon style={{cursor: 'pointer'}} onClick={()=> updateSelect(true)} />
+                            )
+                        }
                     </Grid >
                     <Grid className={classes.item}>
                         {candidate.name}
                     </Grid>
                     <Grid className={classes.item}>
-                        <LabelIcon style={{color: status_color}} /> &nbsp;
+                        <FiberManualRecordIcon style={{color: status_color, fontSize: 10}} /> &nbsp;
                         {(candidate && candidate.applications) ? candidate.applications[0].new_status.label : "None"}
                     </Grid>
                     <Grid className={classes.item}>

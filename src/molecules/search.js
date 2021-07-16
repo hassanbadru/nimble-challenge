@@ -27,7 +27,7 @@ const Search = props => {
     return (
       <Grid className={classes.search}>
          <TextField placeholder={placeholder} className={classes.searchfield} disableUnderline autoFocus onChange={handleSearch}  variant="filled" />
-         <IconButton color="primary" style={{backgroundColor: 'green', color: "#eee", borderRadius: "10%"}}>
+         <IconButton style={{backgroundColor: 'green', color: "#eee", borderRadius: "10%", height: 55, width: 55}}>
              <SearchIcon />
          </IconButton>
       </Grid>

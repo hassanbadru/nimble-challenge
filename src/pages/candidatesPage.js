@@ -4,6 +4,7 @@ import { makeStyles, Grid, Dialog, List } from '@material-ui/core'
 import { useCandidate } from '../contexts/candidatecontext'
 import SearchBox from '../components/searchbox'
 import CandidateList from '../components/candidatelist'
+import ApplicationModal from '../components/appModal'
 
 const useStyles = makeStyles(theme => ({
         body: {
@@ -46,26 +47,6 @@ const CandidatesPage = props => {
 
      </>
   )
-}
-
-
-const ApplicationModal = props => {
-
-    let { view_application, closeAppModal } = props
-
-    return (
-        <Dialog fullWidth open={(view_application) ? true : false} onClose={() => closeAppModal()}>
-          {
-              (view_application) ? ( <Grid style={{margin: '2%'}}>
-                {view_application.id} &nbsp; &nbsp;
-                {view_application.role.id} &nbsp; &nbsp;
-                {view_application.role.title} &nbsp; &nbsp;
-                {view_application.role.jobboard_title} &nbsp; &nbsp;
-                {view_application.new_status.label} &nbsp; &nbsp;
-              </Grid> ) : null
-          }
-        </Dialog>
-    )
 }
 
 export default CandidatesPage;
