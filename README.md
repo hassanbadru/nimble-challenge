@@ -4,16 +4,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-### Specification
+### Requirements Met
+[x] When the user clicks a row in the list of candidates, it should expand a list of that candidate's applications.
+[x] If the user clicks a row that is already expanded, it should close the list of that candidate's applications.
+[x] When the user clicks an application line item, bring up a modal/overlay that shows the candidate information and information specific to that application/role
+[x] Search for candidates by name
+[x] Setup candidate page, route & components
 
-1. When the user clicks a row in the list of candidates, it should expand a list of that candidate's applications. If the user clicks a row that is already expanded, it should close the list of that candidate's applications.
-2. When the user clicks an application line item, bring up a modal/overlay that shows the candidate information and information specific to that application/role. Modal code has been provided in src/ui-kit/Modal.jsx, but feel free to use your own if you'd like.
-
-### Screenshots
+### Demo Screenshots
 
 ![Product Screen Shot - original][product-screenshot-original]
 
 ![Product Screen Shot - expanded][product-screenshot-expanded]
+
+![Product Screen Shot - Modal][product-screenshot-modal]
 
 
 <!-- GETTING STARTED -->
@@ -35,6 +39,11 @@ npm install
 ```sh
 yarn start
 ```
+or
+
+```sh
+npm start
+```
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
@@ -42,3 +51,4 @@ yarn start
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot-original]: public/original.png
 [product-screenshot-expanded]: public/expanded.png
+[product-screenshot-modal]: public/modal.png
