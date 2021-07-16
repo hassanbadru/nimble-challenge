@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 const CandidateApps = props => {
     const classes = useStyles()
 
-    let { applications } = props
+    var { applications, openAppModal } = props
 
     return (
       <Grid className={classes.apps} >
@@ -23,7 +23,7 @@ const CandidateApps = props => {
                 (applications) ? (
                     applications.map((application, i) => {
                         return (
-                            <ListItem key={i}>
+                            <ListItem key={i} onClick={() => openAppModal(application)} style={{cursor: 'pointer'}}>
                                 &nbsp; &nbsp; {application.role.title} &nbsp; &nbsp;
                                 &nbsp; &nbsp; {application.new_status.label}
                             </ListItem>

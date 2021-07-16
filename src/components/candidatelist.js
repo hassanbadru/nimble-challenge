@@ -17,7 +17,8 @@ const useStyles = makeStyles({
 const CandidateList = (props) => {
     let el = null
     const classes = useStyles()
-    let { candidates, open_candidates, loadData, updateCandidates } = useCandidate()
+    let { candidates, loadData, updateCandidates } = useCandidate()
+    let {openAppModal} = props
 
     return (
         <List>
@@ -25,9 +26,10 @@ const CandidateList = (props) => {
                   <CheckBoxOutlineBlankIcon /> &nbsp; &nbsp;
                   Candidate Name &nbsp; &nbsp;
                   Status &nbsp; &nbsp;
-                  # Apps
+                  # Apps &nbsp; &nbsp;
+                  Last Action
              </ListItem>
-            {(candidates) ? candidates.map((candidate, i) => <CandidateRecord key={i} candidate={candidate} />) : "None"}
+            {(candidates) ? candidates.map((candidate, i) => <CandidateRecord key={i} candidate={candidate} openAppModal={openAppModal} />) : "None"}
         </List>
     )
 }

@@ -15,7 +15,15 @@ const useStyles = makeStyles(theme => ({
 const CandidatesPage = props => {
   const classes = useStyles()
   const [view_application, toggleApplication] = useState(false)
-  let { candidates, open_candidates, loadData, updateCandidates } = useCandidate()
+  let { candidates, loadData, updateCandidates } = useCandidate()
+
+  const openAppModal = application => {
+      toggleApplication(application)
+  }
+
+  const closeAppModal = () => {
+      toggleApplication(false)
+  }
 
 
   useEffect(()=> {
@@ -27,10 +35,10 @@ const CandidatesPage = props => {
         <Grid className={classes.body}>
             {(candidates && candidates.length) ? (candidates.length) : "0"} Candidates
             <SearchBox/>
-            <CandidateList />
+            <CandidateList openAppModal={openAppModal} />
         </Grid>
 
-        <ApplicationModal view_application={view_application} toggleApplication={toggleApplication} />
+        <ApplicationModal view_application={view_application} closeAppModal={closeAppModal} />
 
      </>
   )
@@ -39,12 +47,19 @@ const CandidatesPage = props => {
 
 const ApplicationModal = props => {
 
-    let { view_application, toggleApplication } = props
+    let { view_application, closeAppModal } = props
 
     return (
-        <Dialog fullWidth open={view_application} onClose={() => toggleApplication(false)}>
-          <Grid style={{margin: '2%'}}>
-          </Grid>
+        <Dialog fullWidth open={(view_application) ? true : false} onClose={() => closeAppModal()}>
+          {
+              (view_application) ? ( <Grid style={{margin: '2%'}}>
+                {view_application.id} &nbsp; &nbsp;
+                {view_application.role.id} &nbsp; &nbsp;
+                {view_application.role.title} &nbsp; &nbsp;
+                {view_application.role.jobboard_title} &nbsp; &nbsp;
+                {view_application.new_status.label} &nbsp; &nbsp;
+              </Grid> ) : null
+          }
         </Dialog>
     )
 }

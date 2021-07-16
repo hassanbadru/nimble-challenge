@@ -12,11 +12,32 @@ const CandidateProvider = props => {
         updateCandidates((all_candidates && all_candidates.results) ? all_candidates.results : [])
     }
 
+    const addToOpenList = candidate => {
+        let new_open_candidates = (open_candidates) ? open_candidates : []
+        if (!new_open_candidates.includes(candidate.id)){
+            new_open_candidates.push(candidate.id)
+        }
+        updateOpenList(new_open_candidates)
+    }
+
+    const removeFromList = candidate => {
+        let new_open_candidates = (open_candidates) ? open_candidates : []
+        if (new_open_candidates.includes(candidate.id)){
+            const index = new_open_candidates.indexOf(candidate.id);
+            if (index > -1) {
+              new_open_candidates.splice(index, 1);
+            }
+        }
+        updateOpenList(new_open_candidates)
+    }
+
     let data = {
                 candidates,
                 open_candidates,
                 loadData,
-                updateCandidates
+                updateCandidates,
+                addToOpenList,
+                removeFromList
             }
 
 
