@@ -40,7 +40,7 @@ const CandidateRecord = props => {
         openCheck(open_candidates.includes(candidate.id))
     }
 
-    var status_color = (candidate && candidate.applications) ? colorMapping[String(candidate.applications[0].role.active_status)] : colorMapping["2"]
+    var status_color = (candidate && candidate.applications) ? colorMapping[String(candidate.applications[0].new_status.color)] : colorMapping["2"]
 
 
     return (

@@ -41,7 +41,7 @@ const CandidateApps = props => {
                                     {application.role.title}
                                 </Grid>
                                 <Grid className={classes.appitem}>
-                                    <FiberManualRecordIcon style={{color: (application && application.role) ? colorMapping[application.role.active_status] : colorMapping["2"], fontSize: 10}} /> &nbsp; {application.new_status.label}
+                                    <FiberManualRecordIcon style={{color: (application && application.role) ? colorMapping[application.new_status.color] : colorMapping["2"], fontSize: 10}} /> &nbsp; {application.new_status.label}
                                 </Grid>
                             </ListItem>
                         )
