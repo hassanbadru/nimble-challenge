@@ -9,7 +9,7 @@ const ApplicationModal = props => {
 
     let { view_application, closeAppModal } = props
 
-    var status_color = (view_application) ? colorMapping[String(view_application.role.active_status)] : colorMapping["2"]
+    var status_color = (view_application) ? colorMapping[String(view_application.new_status.color)] : colorMapping["2"]
 
     return (
         <Dialog fullWidth open={(view_application) ? true : false} onClose={() => closeAppModal()}>
